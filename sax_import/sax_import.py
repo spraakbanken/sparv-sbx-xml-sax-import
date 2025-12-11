@@ -96,7 +96,7 @@ def parse(source_file: SourceFilename = SourceFilename(),
           ) -> None:
         parser = SAXParser()
         parse(source_dir.get_path(source_file,"xml"),parser)
-        Text(source_file).write(parser.text)
+        Text(source_file).write(parser.getText())
         source_structure = list(parser.annotations.keys())
         SourceStructure(source_file).write(source_structure)
         for annotation_name in source_structure:
