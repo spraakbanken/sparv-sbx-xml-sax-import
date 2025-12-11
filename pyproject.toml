@@ -1,0 +1,13 @@
+[project]
+name = "sparv-sbx-uppercase"
+version = "0.1.0"
+description = "Uppercase converter (example plug-in for Sparv)"
+readme = "README.md"
+license = "MIT"
+# authors = [
+#     { name = "", email = "" }
+# ]
+dependencies = [
+    "sparv~=5.0"
+]
+entry-points."sparv.plugin" = { sbx_uppercase = "sbx_uppercase" }
