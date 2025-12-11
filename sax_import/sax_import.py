@@ -3,7 +3,7 @@
 from sparv.api import AnnotationAllSourceFiles, Config, Output, Source, SourceFilename, SourceStructure, SourceStructureParser, Text, importer
 
 from xml.sax.handler import ContentHandler
-from xml.sax import parse
+import xml.sax as SAX
 
 import re
 
@@ -51,7 +51,7 @@ class XMLStructure(SourceStructureParser):
     def get_file_annotations(self, file):
         """Parses the whole file using SAX parser and extracts all tags/elements as sparv annotations"""
         handler = XMLStructureHandler()
-        parse(file, handler)
+        SAX.parse(file, handler)
         return handler.annotations
 
 class SAXParser(ContentHandler):
@@ -112,7 +112,7 @@ def parse(source_file: SourceFilename = SourceFilename(),
           source_dir: Source = Source()
           ) -> None:
         parser = SAXParser()
-        parse(source_dir.get_path(source_file,"xml"),parser)
+        SAX.parse(source_dir.get_path(source_file,"xml"),parser)
         Text(source_file).write(parser.getText())
         source_structure = list(parser.annotations.keys())
         SourceStructure(source_file).write(source_structure)
