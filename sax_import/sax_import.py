@@ -89,6 +89,23 @@ class SAXParser(ContentHandler):
         return ''.join(self.text)
 
 @importer("Test importer", file_extension = "xml",
+          # Define the output elements using configuration
+          outputs=Config("sax_import.elements"),
+          config=[
+              Config(
+                  "sax_import.elements",
+                  [],
+                  description="List of elements and attributes present in the source files.\n\n"
+                  "All elements and attributes are parsed whether listed here or not, so this is only needed when using "
+                  "an element or attribute from the source files as input for another module, to let Sparv know where it "
+                  "comes from.\n\n"
+                  "Another use for this setting is to rename elements and attributes during import, using the following "
+                  "syntax:\n\n"
+                  "  - element as new_element_name\n"
+                  "  - element:attribute as new_attribute_name\n\n"
+                  "Note that this is usually not needed, as renames can be done during the export step instead.",
+                  datatype=list[str],
+              ),
           # Automatically extract the structure
           structure = XMLStructure)
 def parse(source_file: SourceFilename = SourceFilename(),
