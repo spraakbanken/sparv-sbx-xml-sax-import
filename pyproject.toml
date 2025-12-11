@@ -1,13 +1,13 @@
 [project]
-name = "sparv-sbx-uppercase"
+name = "sparv-sbx-xml-sax-import"
 version = "0.1.0"
-description = "Uppercase converter (example plug-in for Sparv)"
+description = "Efficient XML importer using SAX parsing"
 readme = "README.md"
 license = "MIT"
-# authors = [
-#     { name = "", email = "" }
-# ]
+authors = [
+	{ name = "Herb Lange", email = "herbert.lange@svenska.gu.se" }
+]
 dependencies = [
     "sparv~=5.0"
 ]
-entry-points."sparv.plugin" = { xml_import = "xml_import" }
+entry-points."sparv.plugin" = { sax_import = "sax_import" }
