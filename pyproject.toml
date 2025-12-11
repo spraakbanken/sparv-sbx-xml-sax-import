@@ -10,4 +10,4 @@ license = "MIT"
 dependencies = [
     "sparv~=5.0"
 ]
-entry-points."sparv.plugin" = { sbx_uppercase = "sbx_uppercase" }
+entry-points."sparv.plugin" = { xml_import = "xml_import" }
