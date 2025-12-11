@@ -88,7 +88,7 @@ class SAXParser(ContentHandler):
     def getText(self):
         return ''.join(self.text)
 
-@importer("Test importer", file_extension = "xml",
+@importer("SAX importer", file_extension = "xml",
           # Define the output elements using configuration
           outputs=Config("sax_import.elements"),
           config=[
