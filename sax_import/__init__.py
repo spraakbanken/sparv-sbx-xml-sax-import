@@ -1,11 +1,5 @@
-"""Example of a Sparv annotator that converts tokens to uppercase."""
+"""Efficient XML importer using SAX parsing."""
 
-# from sparv import Config
+from . import sax_import
 
-from . import uppercase
-
-# __config__ = [
-#     Config("uppercase.some_setting", "some_default_value", description="Description for this setting")
-# ]
-
-__description__ = "Example of a Sparv annotator that converts tokens to uppercase."
+__description__ = "Efficient XML importer using SAX parsing."
