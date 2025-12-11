@@ -105,7 +105,7 @@ class SAXParser(ContentHandler):
                   "  - element:attribute as new_attribute_name\n\n"
                   "Note that this is usually not needed, as renames can be done during the export step instead.",
                   datatype=list[str],
-              ),
+              )],
           # Automatically extract the structure
           structure = XMLStructure)
 def parse(source_file: SourceFilename = SourceFilename(),
