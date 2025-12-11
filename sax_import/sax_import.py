@@ -1,6 +1,6 @@
 """Efficient XML importer using SAX parsing."""
 
-from sparv.api import AnnotationAllSourceFiles, Output, Source, SourceFilename, SourceStructure, SourceStructureParser, Text
+from sparv.api import AnnotationAllSourceFiles, Config, Output, Source, SourceFilename, SourceStructure, SourceStructureParser, Text, importer
 
 from xml.sax.handler import ContentHandler
 from xml.sax import parse
