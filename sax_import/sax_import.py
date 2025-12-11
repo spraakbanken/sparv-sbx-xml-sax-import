@@ -1,9 +1,13 @@
 """Efficient XML importer using SAX parsing."""
 
-from sparv.api import AnnotationAllSourceFiles, Sourcem SourceFilename, SourceStructureParser
+from sparv.api import AnnotationAllSourceFiles, Output, Source, SourceFilename, SourceStructure, SourceStructureParser, Text
 
 from xml.sax.handler import ContentHandler
 from xml.sax import parse
+
+import re
+
+from collections import defaultdict
 
 def annotation_list_to_dict(annotation_list : list[AnnotationAllSourceFiles]) -> dict[str,AnnotationAllSourceFiles]:
     """Converts a list of AnnotationAllSourceFiles into a dictionary with the annotation/attribute name as key"""
