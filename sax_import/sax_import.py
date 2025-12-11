@@ -91,7 +91,7 @@ class SAXParser(ContentHandler):
 @importer("Test importer", file_extension = "xml",
           # Automatically extract the structure
           structure = XMLStructure)
-def sax_import(source_file: SourceFilename = SourceFilename(),
+def parse(source_file: SourceFilename = SourceFilename(),
           source_dir: Source = Source()
           ) -> None:
         parser = SAXParser()
